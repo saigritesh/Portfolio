@@ -1,0 +1,706 @@
+/* ===================================== */
+/*        Global & Layout Styles         */
+/* ===================================== */
+
+/* CSS Variables for Colors and Settings */
+:root {
+  --primary-color: #fff;
+  --accent-color: #00bcd4;
+  --navbar-bg: rgba(0, 0, 0, 0.6);
+  --transition-speed: 0.4s;
+  --sidebar-width: 300px;
+  
+  /* Sidebar specific colors & settings */
+  --bg-gradient-onyx: linear-gradient(135deg, #2c3e50, #34495e);
+  --white-2: #f0f0f0;
+  --white-1: #e0e0e0;
+  --onyx: #333333;
+  --orange-yellow-crayola: #FFA500;
+  --border-gradient-onyx: linear-gradient(135deg, #444444, #222222);
+  --bg-gradient-jet: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+  --bg-gradient-yellow-1: linear-gradient(135deg, #f7b733, #fc4a1a);
+  --bg-gradient-yellow-2: linear-gradient(135deg, #f5af19, #f12711);
+  --shadow-2: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --light-gray-70: #b0b0b0;
+  --light-gray: #cccccc;
+  --fs-3: 1.5rem;
+  --fs-7: 0.875rem;
+  --fs-8: 0.75rem;
+  --fw-500: 500;
+  --fw-300: 300;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Font & Background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: var(--primary-color);
+}
+
+/* Wrapper: Flex layout for Sidebar and Main Content */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ===================================== */
+/*              Sidebar                 */
+/* ===================================== */
+
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--onyx);
+  padding: 20px;
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 5px;
+  margin: 20px;
+  transition: background 0.3s ease;
+}
+
+/* Hover Effect for Sidebar Background */
+.sidebar:hover {
+  background: #2b2b2b;
+}
+
+/* Sidebar Info Section */
+.sidebar-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Avatar Box */
+.avatar-box {
+  background: var(--bg-gradient-onyx);
+  border-radius: 50%;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+}
+
+/* Info Content */
+.info-content .name {
+  color: var(--white-2);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-500);
+  letter-spacing: -0.25px;
+  margin-bottom: 5px;
+}
+
+.info-content .title {
+  color: var(--white-1);
+  background: var(--onyx);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+  padding: 3px 12px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* Sidebar Details (Always Visible) */
+.sidebar-details {
+  margin-top: 10px;
+  flex: 1;
+}
+
+/* Contacts List */
+.contacts-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.icon-box {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+/* Contact Info */
+.contact-info .contact-title {
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.contact-info :is(.contact-link, time, address) {
+  color: var(--white-2);
+  font-size: var(--fs-7);
+  text-decoration: none;
+}
+
+.contact-info address {
+  font-style: normal;
+}
+
+/* Social List */
+.social-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 0;
+}
+
+.social-link {
+  color: var(--light-gray-70);
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--light-gray);
+}
+
+/* ===================================== */
+/*           Main Content Area          */
+/* ===================================== */
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+/* Top Navbar */
+.navbar {
+  background: var(--navbar-bg);
+  padding: 15px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: var(--transition-speed);
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* Content Container for Sections */
+.content-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 5px;
+  flex: 1;
+  animation: fadeIn var(--transition-speed) ease;
+}
+
+/* Sections */
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===================================== */
+/*             About Section            */
+/* ===================================== */
+
+/* About Article Container - now a section */
+.article-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #f0f0f0;
+}
+
+/* Service Section inside About */
+.service {
+  margin-top: 30px;
+}
+
+.service-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Service List */
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Each Service Item */
+.service-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Service Icon Box */
+.service-icon-box {
+  flex-shrink: 0;
+}
+
+/* Service Content Box */
+.service-content-box {
+  flex: 1;
+}
+
+.service-item-title {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.service-item-text {
+  font-size: 1rem;
+  color: #e0e0e0;
+  line-height: 1.4;
+}
+
+/* ===================================== */
+/*          Responsive Adjustments       */
+/* ===================================== */
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    margin: 10px 0;
+  }
+  .main-content {
+    margin: 10px;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Resume Section Styling */
+#resume {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  margin: 20px;
+}
+
+#resume header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#resume .article-title {
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* Education Section */
+.education h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.education-list {
+  list-style: none;
+  padding: 0;
+}
+
+.education-list li {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-left: 4px solid var(--accent-color);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.education-list h4 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.education-list p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Skills Section */
+.skills h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skills-list li {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Resume Link */
+.resume-link {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.resume-link .btn {
+  display: inline-block;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.resume-link .btn:hover {
+  background: #008ba3;
+}
+
+
+/* ------------------------------ */
+/* Competitive Programming Section */
+/* ------------------------------ */
+
+.cp-profiles {
+  margin-bottom: 30px;
+}
+
+.cp-profiles h3 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* 2x2 grid for CP profiles */
+.cp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Link wrapper for entire card */
+.cp-link {
+  text-decoration: none;
+  display: block;
+}
+
+/* Card layout: Flex container with logo on left and text on right */
+.cp-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cp-link:hover .cp-card {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.cp-card img {
+  width: 60px;
+  height: auto;
+}
+
+.cp-card p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* ------------------------------ */
+/* Certificates Section */
+/* ------------------------------ */
+
+.certificates {
+  margin-top: 30px;
+}
+
+.certificates h3 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* 2-column grid for certificate cards */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.cert-link {
+  text-decoration: none;
+  display: block;
+}
+
+.certificate-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cert-link:hover .certificate-card {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.certificate-card img {
+  width: 100%;
+  max-width: 120px; /* Reduced max width to make logos smaller */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+
+.certificate-card p {
+  font-size: 1rem;
+  color: #fff;
+  margin: 0;
+}
+
+
+/* Blog Section Container */
+/* Blog Section Container */
+#blog {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px;
+  margin: 20px;
+}
+
+#blog header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#blog .article-title {
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* Blog Grid: 1 blog post per row */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Blog Link Wrapper */
+.blog-link {
+  text-decoration: none;
+  display: block;
+}
+
+/* Blog Card as a Flex Container */
+.blog-card {
+  display: flex;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.blog-link:hover .blog-card {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Image Container */
+.blog-image {
+  flex: 0 0 150px; /* Fixed width for images */
+}
+
+.blog-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Content Container */
+.blog-content {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Blog Title */
+.blog-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* Blog Excerpt with Truncation */
+.blog-excerpt {
+  font-size: 1rem;
+  color: #e0e0e0;
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;  /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Read More Button */
+.read-more-btn {
+  align-self: flex-start;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background: #008ba3;
+}
+
+/* Expanded state for the excerpt */
+.blog-excerpt.expanded {
+  -webkit-line-clamp: unset;
+}
+
+
+
+/* Contact Form Container */
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #008ba3;
+}

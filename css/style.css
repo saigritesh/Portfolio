@@ -1,8 +1,3 @@
-/* ===================================== */
-/*        Global & Layout Styles         */
-/* ===================================== */
-
-/* CSS Variables for Colors and Settings */
 :root {
   --primary-color: #fff;
   --accent-color: #00bcd4;
@@ -10,7 +5,7 @@
   --transition-speed: 0.4s;
   --sidebar-width: 300px;
   
-  /* Sidebar specific colors & settings */
+ 
   --bg-gradient-onyx: linear-gradient(135deg, #2c3e50, #34495e);
   --white-2: #f0f0f0;
   --white-1: #e0e0e0;
@@ -30,29 +25,27 @@
   --fw-300: 300;
 }
 
-/* Global Reset */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Base Font & Background */
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #1e3c72, #2a5298);
   color: var(--primary-color);
 }
 
-/* Wrapper: Flex layout for Sidebar and Main Content */
+
 .wrapper {
   display: flex;
   min-height: 100vh;
 }
 
-/* ===================================== */
-/*              Sidebar                 */
-/* ===================================== */
+
 
 .sidebar {
   width: var(--sidebar-width);
@@ -67,19 +60,19 @@ body {
   transition: background 0.3s ease;
 }
 
-/* Hover Effect for Sidebar Background */
+
 .sidebar:hover {
   background: #2b2b2b;
 }
 
-/* Sidebar Info Section */
+
 .sidebar-info {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* Avatar Box */
+
 .avatar-box {
   background: var(--bg-gradient-onyx);
   border-radius: 50%;
@@ -88,7 +81,7 @@ body {
   height: 80px;
 }
 
-/* Info Content */
+
 .info-content .name {
   color: var(--white-2);
   font-size: var(--fs-3);
@@ -107,13 +100,13 @@ body {
   display: inline-block;
 }
 
-/* Sidebar Details (Always Visible) */
+
 .sidebar-details {
   margin-top: 10px;
   flex: 1;
 }
 
-/* Contacts List */
+
 .contacts-list {
   list-style: none;
   display: flex;
@@ -139,7 +132,7 @@ body {
   margin-right: 10px;
 }
 
-/* Contact Info */
+
 .contact-info .contact-title {
   color: var(--light-gray-70);
   font-size: var(--fs-8);
@@ -157,7 +150,7 @@ body {
   font-style: normal;
 }
 
-/* Social List */
+
 .social-list {
   list-style: none;
   display: flex;
@@ -177,9 +170,7 @@ body {
   color: var(--light-gray);
 }
 
-/* ===================================== */
-/*           Main Content Area          */
-/* ===================================== */
+
 
 .main-content {
   flex: 1;
@@ -188,7 +179,7 @@ body {
   margin: 20px;
 }
 
-/* Top Navbar */
+
 .navbar {
   background: var(--navbar-bg);
   padding: 15px 20px;
@@ -216,7 +207,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Content Container for Sections */
+
 .content-container {
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
@@ -225,7 +216,7 @@ body {
   animation: fadeIn var(--transition-speed) ease;
 }
 
-/* Sections */
+
 .content {
   display: none;
 }
@@ -244,17 +235,13 @@ body {
   line-height: 1.6;
 }
 
-/* Fade In Animation */
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-/* ===================================== */
-/*             About Section            */
-/* ===================================== */
 
-/* About Article Container - now a section */
 .article-title {
   font-size: 2rem;
   margin-bottom: 15px;
@@ -268,7 +255,7 @@ body {
   color: #f0f0f0;
 }
 
-/* Service Section inside About */
+
 .service {
   margin-top: 30px;
 }
@@ -279,7 +266,7 @@ body {
   text-align: center;
 }
 
-/* Service List */
+
 .service-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -288,7 +275,7 @@ body {
   padding: 0;
 }
 
-/* Each Service Item */
+
 .service-item {
   background: rgba(255, 255, 255, 0.1);
   padding: 15px;
@@ -304,12 +291,12 @@ body {
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* Service Icon Box */
+
 .service-icon-box {
   flex-shrink: 0;
 }
 
-/* Service Content Box */
+
 .service-content-box {
   flex: 1;
 }
@@ -326,9 +313,7 @@ body {
   line-height: 1.4;
 }
 
-/* ===================================== */
-/*          Responsive Adjustments       */
-/* ===================================== */
+
 
 @media (max-width: 768px) {
   .wrapper {
@@ -347,7 +332,7 @@ body {
   }
 }
 
-/* Resume Section Styling */
+
 #resume {
   padding: 20px;
   background: rgba(255, 255, 255, 0.05);
@@ -365,7 +350,7 @@ body {
   color: #fff;
 }
 
-/* Education Section */
+
 .education h3 {
   font-size: 1.8rem;
   margin-bottom: 15px;
@@ -396,7 +381,7 @@ body {
   color: #ddd;
 }
 
-/* Skills Section */
+
 .skills h3 {
   font-size: 1.8rem;
   margin-bottom: 15px;
@@ -416,7 +401,7 @@ body {
   color: #ddd;
 }
 
-/* Resume Link */
+
 .resume-link {
   margin-top: 30px;
   text-align: center;
@@ -437,9 +422,6 @@ body {
 }
 
 
-/* ------------------------------ */
-/* Competitive Programming Section */
-/* ------------------------------ */
 
 .cp-profiles {
   margin-bottom: 30px;
@@ -452,20 +434,20 @@ body {
   color: #fff;
 }
 
-/* 2x2 grid for CP profiles */
+
 .cp-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
-/* Link wrapper for entire card */
+
 .cp-link {
   text-decoration: none;
   display: block;
 }
 
-/* Card layout: Flex container with logo on left and text on right */
+
 .cp-card {
   display: flex;
   align-items: center;
@@ -493,10 +475,6 @@ body {
   margin: 0;
 }
 
-/* ------------------------------ */
-/* Certificates Section */
-/* ------------------------------ */
-
 .certificates {
   margin-top: 30px;
 }
@@ -508,7 +486,7 @@ body {
   color: #fff;
 }
 
-/* 2-column grid for certificate cards */
+
 .certificates-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -535,7 +513,7 @@ body {
 
 .certificate-card img {
   width: 100%;
-  max-width: 120px; /* Reduced max width to make logos smaller */
+  max-width: 120px;
   height: auto;
   margin-bottom: 10px;
 }
@@ -548,8 +526,6 @@ body {
 }
 
 
-/* Blog Section Container */
-/* Blog Section Container */
 #blog {
   padding: 20px;
   background: rgba(255, 255, 255, 0.05);
@@ -567,20 +543,18 @@ body {
   color: #fff;
 }
 
-/* Blog Grid: 1 blog post per row */
+
 .blog-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
 }
 
-/* Blog Link Wrapper */
 .blog-link {
   text-decoration: none;
   display: block;
 }
 
-/* Blog Card as a Flex Container */
 .blog-card {
   display: flex;
   align-items: flex-start;
@@ -595,9 +569,9 @@ body {
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* Image Container */
+
 .blog-image {
-  flex: 0 0 150px; /* Fixed width for images */
+  flex: 0 0 150px; 
 }
 
 .blog-image img {
@@ -606,7 +580,7 @@ body {
   display: block;
 }
 
-/* Content Container */
+
 .blog-content {
   flex: 1;
   padding: 15px;
@@ -614,27 +588,26 @@ body {
   flex-direction: column;
 }
 
-/* Blog Title */
 .blog-title {
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: #fff;
 }
 
-/* Blog Excerpt with Truncation */
+
 .blog-excerpt {
   font-size: 1rem;
   color: #e0e0e0;
   line-height: 1.4;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;  /* Limit to 3 lines */
+  -webkit-line-clamp: 3; 
   -webkit-box-orient: vertical;
   margin-bottom: 10px;
   transition: all 0.3s ease;
 }
 
-/* Read More Button */
+
 .read-more-btn {
   align-self: flex-start;
   background: var(--accent-color);
@@ -651,14 +624,11 @@ body {
   background: #008ba3;
 }
 
-/* Expanded state for the excerpt */
 .blog-excerpt.expanded {
   -webkit-line-clamp: unset;
 }
 
 
-
-/* Contact Form Container */
 .contact-form-container {
   max-width: 600px;
   margin: 0 auto;
@@ -667,7 +637,7 @@ body {
   border-radius: 5px;
 }
 
-/* Form Group */
+
 .form-group {
   margin-bottom: 15px;
 }
@@ -688,7 +658,6 @@ body {
   font-size: 1rem;
 }
 
-/* Button */
 .btn {
   display: inline-block;
   background: var(--accent-color);
